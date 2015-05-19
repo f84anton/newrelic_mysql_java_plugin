@@ -1,0 +1,24 @@
+#!/bin/bash
+
+cat > config/newrelic.json <<EOF_JSON
+{
+  "license_key": "${NEW_RELIC_LICENSE_KEY}",
+  "log_level": "${NEW_RELIC_LOG_LEVEL}",
+  "log_file_name": "newrelic_plugin.log",
+  "log_file_path": "logs"
+}
+EOF_JSON
+
+cat > config/plugin.json <<EOF_JSON
+{
+  "agents": [
+    {
+      "name"    : "${MYSQL_HOST}",
+      "host"    : "${MYSQL_HOST}",
+      "metrics" : "${MYSQL_CATEGORIES}",
+      "user"    : "${MYSQL_USER}",
+      "passwd"  : "${MYSQL_PASS}"
+    }
+  ]
+}
+EOF_JSON
