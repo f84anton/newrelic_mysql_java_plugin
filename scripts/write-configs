@@ -4,8 +4,8 @@ cat > config/newrelic.json <<EOF_JSON
 {
   "license_key": "${NEW_RELIC_LICENSE_KEY}",
   "log_level": "${NEW_RELIC_LOG_LEVEL}",
-  "log_file_name": "newrelic_plugin.log",
-  "log_file_path": "logs"
+  "log_file_name": "null",
+  "log_file_path": "/dev"
 }
 EOF_JSON
 
